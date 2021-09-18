@@ -7,7 +7,8 @@ QA is also a complex task that is related to natural language. It is an old rese
 The development of VQA is important to that of Artificial Intelligence (AI). Maybe we can recognize it as a subfield of common Artificial Intelligence. Apart from the importance in the technique area, the development of VQA is also important to all of us because the applications of VQA can be a benefit to everyone.
 
 VQA can be widely used in many areas. VQA can improve human-computer interaction. The user can get familiar with their device faster and use it easier. For example, VQA can help people with poor eyesight to make their lives more convenient [3]. Besides, the existing AI can be improved with an embedded VQA system. For example, with an embedded VQA system, AlphaGo may be a good Go teacher. So, in short, the research to VQA can contribute to not only individuals, but also companies, communities, and nations. It can provide individuals convenience, give companies income and reputation, improve techniques in communities and strengthen the nations.
- 
+
+
 Reference
 
 [1] Diefenbach, D., Lopez, V., Singh, K. et al. Core techniques of question answering systems over knowledge bases: a survey. Knowl Inf Syst 55, 529–569 (2018). https://doi.org/10.1007/s10115-017-1100-y
