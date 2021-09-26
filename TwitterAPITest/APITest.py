@@ -68,9 +68,10 @@ print('\n')
 trends_worldwide = api.trends_place(1)
 data = trends_worldwide[0]
 trends = data['trends']
-print('Trends:')
+trend_list=[]
 for trend in trends:
-    print(trend['name'])
+    trend_list.append(trend['name'])
+print('Trends:',trend_list)
 
 # Given id of a place, provide more details about that place. The place id should be requested on https://api.twitter.com/1.1/geo/id/:place_id.json
 # Thanks to https://iq.opengenus.org/geo-api-twitter/
