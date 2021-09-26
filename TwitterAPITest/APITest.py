@@ -51,8 +51,8 @@ print('\n')
 print(friendship_result[0].screen_name,"following",friendship_result[1].screen_name,"?:", friendship_result[0].following)
 print(friendship_result[0].screen_name,"followed by ",friendship_result[1].screen_name,"?:", friendship_result[0].followed_by)
 
-# search 5 tweets about 'china' in Chinese
-tweets_find = api.search('china',lang='zh',count='5')
+# search 20 tweets about 'china' in Chinese
+tweets_find = api.search('china',lang='zh',count='20')
 for search_tweet in tweets_find:
     print('\n')
     print(search_tweet.text)
@@ -63,7 +63,7 @@ for search_tweet in tweets_find:
         print('tweet hashtag:',hashtags)
 print('\n')
 
-# the top 50 trending topics for a specific WOEID, The Yahoo! Where On Earth ID of the location to return trending information for.
+# the top 50 trending topics for a specific WOEID
 # Global information is available by using 1 as the WOEID.
 trends_worldwide = api.trends_place(1)
 data = trends_worldwide[0]
