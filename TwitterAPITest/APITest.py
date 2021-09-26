@@ -56,6 +56,11 @@ tweets_find = api.search('china',lang='zh',count='5')
 for search_tweet in tweets_find:
     print('\n')
     print(search_tweet.text)
+    hashtags=[]
+    for tag_inf in search_tweet.entities['hashtags']:
+        hashtags.append(tag_inf['text'])
+    if len(hashtags)!=0:
+        print('tweet hashtag:',hashtags)
 print('\n')
 
 # the top 50 trending topics for a specific WOEID, The Yahoo! Where On Earth ID of the location to return trending information for.
