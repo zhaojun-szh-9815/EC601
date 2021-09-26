@@ -51,11 +51,11 @@ print('\n')
 print(friendship_result[0].screen_name,"following",friendship_result[1].screen_name,"?:", friendship_result[0].following)
 print(friendship_result[0].screen_name,"followed by ",friendship_result[1].screen_name,"?:", friendship_result[0].followed_by)
 
-# search 20 tweets about 'china' in Chinese
-tweets_find = api.search('china',lang='zh',count='20')
+# search 20 tweets about 'Genshin' in Chinese, and print the text of the tweet and hashtags
+tweets_find = api.search('Genshin',lang='zh',count='20')
 for search_tweet in tweets_find:
     print('\n')
-    print(search_tweet.text)
+    print('tweet text:',search_tweet.text)
     hashtags=[]
     for tag_inf in search_tweet.entities['hashtags']:
         hashtags.append(tag_inf['text'])
