@@ -10,10 +10,10 @@ By removing specified language in Google's sample, the test can detect the langu
 It also provided other examples, such as entities analyzing, syntax analyzing, etc.
 
 Here is the output of my test:
-<img width="665" alt="GoogleNLP1" src="https://user-images.githubusercontent.com/55321300/135214942-5677ed8b-69e5-42f2-92d4-2a1c6e63ec48.PNG">
+<div align=center><img width="665" alt="GoogleNLP1" src="https://user-images.githubusercontent.com/55321300/135214942-5677ed8b-69e5-42f2-92d4-2a1c6e63ec48.PNG">
 In this case, the API did very well, except the third test. The first sentence should be a middle or even positive sentiment, but the API gives -0.4.
 
-<img width="510" alt="GoogleNLP2" src="https://user-images.githubusercontent.com/55321300/135215833-4cbf86e1-b31d-415f-8602-c5113c9ef042.PNG">
+<div align=center><img width="510" alt="GoogleNLP2" src="https://user-images.githubusercontent.com/55321300/135215833-4cbf86e1-b31d-415f-8602-c5113c9ef042.PNG">
 In this case, the test got a Chinese input. The content of two input are all "I'm tired today. But we really had a good time.".
 The first test produced a strange output. In Chinese, the character '痛' means 'painful', but the word '痛快' means 'joyful'.
 So it seems that the API look for words or characters which contains important emotion.
