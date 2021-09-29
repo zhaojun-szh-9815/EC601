@@ -18,5 +18,6 @@ Here is the output of my test:
 <div align=center><img width="510" alt="GoogleNLP2" src="https://user-images.githubusercontent.com/55321300/135215833-4cbf86e1-b31d-415f-8602-c5113c9ef042.PNG">
 
 <div align=left>In this case, the test got a Chinese input. The content of two input are all "I'm tired today. But we really had a good time.".
+
 The first test produced a strange output. In Chinese, the character '痛' means 'painful', but the word '痛快' means 'joyful'.
 So it seems that the API look for words or characters which contains important emotion.
