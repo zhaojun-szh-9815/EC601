@@ -12,7 +12,7 @@ These are important modules and their usage of the project
 <h3>Resize picture:</h3>
 &ensp;&ensp;Module: PIL.image<br>
 &ensp;&ensp;Method: image.resize([224,224],Image.ANTIALIAS)<br>
-&ensp;&ensp;Output: The 224*224 picture with the same content, but maybe change aspect ratio.<br>
+&ensp;&ensp;Output: The 224*224 picture with the same content, but maybe change the aspect ratio.<br>
 
 <h3>Make vocabulary for question and answer:</h3>
 <b>Questions:</b><br>
@@ -21,14 +21,14 @@ These are important modules and their usage of the project
 &ensp;&ensp;Output: All tokens used in question dataset<br>
 <b>Answers:</b><br>
 &ensp;&ensp;Data structure: defaultdict(lambda: 0)<br>
-&ensp;&ensp;Dictionary keys: content of answers<br>
+&ensp;&ensp;Dictionary keys: the content of answers<br>
 &ensp;&ensp;Dictionary values: times of use<br>
-&ensp;&ensp;Method: Increase the value of the key by 1 when find the key used. Reverse sort the dictionary and pick the top 1000 answers.<br>
+&ensp;&ensp;Method: Increase the value of the key by 1 when finding the key used. Reverse sort the dictionary and pick the top 1000 answers.<br>
 &ensp;&ensp;Output: the top 1000 answers.<br>
 
 <h3>Build VQA inputs:</h3>
 &ensp;&ensp;Data Structure: list and dictionary<br>
-&ensp;&ensp;Dictionary keys: [image_name, image_path, question_id, question_str, question_tokens], and may also have [all_answers, valid_answers] if the answer is given. All answers are all possible answer for this question, and valid answers are answers in both ‘All answers’ and ‘Answer vocabulary’ built before.<br>
+&ensp;&ensp;Dictionary keys: [image_name, image_path, question_id, question_str, question_tokens], and may also have [all_answers, valid_answers] if the answer is given. All answers are all possible answers for this question, and valid answers are answers in both ‘All answers’ and ‘Answer vocabulary’ built before.<br>
 &ensp;&ensp;Output: a list of dictionaries, store it as .npy file.<br>
 
 <h3>Train/valid Dataset:</h3>
@@ -45,10 +45,10 @@ These are important modules and their usage of the project
 
 ![vgg19](https://user-images.githubusercontent.com/55321300/138577656-e6c0a752-49d9-4358-92af-9265ffd54e6e.png)
 
-&ensp;&ensp;When forward propagation, calulate the norm of the output of the network. We cannot sure what the usage of this part.<br>
+&ensp;&ensp;When forward propagation, calculate the norm of the output of the network. We cannot sure what the usage of this part.<br>
 
 <h3>QstEncoder:</h3>
-&ensp;&ensp;Using LSTM model. Input size is 300, which is a word and it will be picked from the dictionary/ matrix built by pytorch.nn Embedding function. Hidden size is 512, which can be customized. And there are two layers, it can be recognized as depth in this picture.<br>
+&ensp;&ensp;Using LSTM model. The input size is 300, which is a word and it will be picked from the dictionary/ matrix built by pytorch.nn Embedding function. The hidden size is 512, which can be customized. And there are two layers, which can be recognized as depth in this picture.<br>
 
 <div align="center">
 
@@ -68,7 +68,7 @@ These are important modules and their usage of the project
 &ensp;&ensp;Loss function: CrossEntropyLoss()<br>
 &ensp;&ensp;Optimizer: Adam()<br>
 &ensp;&ensp;Change learn rate: StepLR()<br>
-&ensp;&ensp;Use the VQAModel to predict, the output will be a 1000 vector, which indicate the possibility of the answer depend on the answer vocabulary built before. Then pick the max possibility to calculate the accuracy.<br>
+&ensp;&ensp;Use the VQAModel to predict, the output will be a 1000 vector, which indicates the possibility of the answer depending on the answer vocabulary built before. Then pick the max possibility to calculate the accuracy.<br>
 
 <h2>Technology:</h2>
 &ensp;&ensp;Tool: Pytorch<br>
@@ -82,7 +82,7 @@ These are important modules and their usage of the project
 
 </div>
 <h2>Use the model to predict:</h2>
-The architecture of our code is simple. Firstly, convert the picture and the question to tensor that fit the input size of the model. Then, load the checkpoint file which saved by the open-source project. After that, change the model to evaluate mode and feed the input into the model to get the output. Finally, pick the answer depends on the output possibility of the model.<br>
+The architecture of our code is simple. Firstly, convert the picture and the question to tensor objects that fit the input size of the model. Then, load the checkpoint file saved by the open-source project. After that, change the model to evaluate mode and feed the input into the model to get the output. Finally, picking the answer depends on the output possibility of the model.<br>
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/55321300/138578425-c078ac86-a4c9-4522-9cc5-974ba1bbcf75.JPG" style="width:70%" />
