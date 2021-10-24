@@ -3,7 +3,8 @@
 <b>Group: Ruiling Zhang, Yuko Ishikawa, Zihao Shen</b><br>
 
 <h2>Overall:</h2>
-We duplicate and test an open-source python project, which is based on pytorch.
+We duplicate and test an open-source python project, which is based on pytorch.<br>
+https://github.com/tbmoon/basic_vqa
 
 <h2>The project architecture:</h2><br>
 These are important modules and their usage of the project
