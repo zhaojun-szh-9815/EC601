@@ -10,9 +10,9 @@ https://github.com/tbmoon/basic_vqa
 These are important modules and their usage of the project
 
 <h3>Resize picture:</h3>
-Module: PIL.image<br>
-Method: image.resize([224,224],Image.ANTIALIAS)<br>
-Output: The 224*224 picture with the same content, but maybe change aspect ratio.<br>
+&ensp;&ensp;Module: PIL.image<br>
+&ensp;&ensp;Method: image.resize([224,224],Image.ANTIALIAS)<br>
+&ensp;&ensp;Output: The 224*224 picture with the same content, but maybe change aspect ratio.<br>
 
 <h3>Make vocabulary for question and answer:</h3>
 <b>Questions:</b><br>
