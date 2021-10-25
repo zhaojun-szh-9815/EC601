@@ -5,11 +5,11 @@ import torchvision.transforms as transforms
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
-import text_helper
-from resize_images import main as main_resize
-from models import VqaModel
+import text_helper                              # this module import from the base-vqa project
+from resize_images import main as main_resize   # this module import from the base-vqa project
+from models import VqaModel                     # this module import from the base-vqa project
 
-device = torch.device('cuda')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 transform = {transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.485, 0.456, 0.406),(0.229, 0.224, 0.225))])}
 
 def predict(image_path, question):
@@ -21,14 +21,14 @@ def predict(image_path, question):
         image = trans(image)
     image = image.view(1,3,224,224)
     
-    qst_vocab = text_helper.VocabDict('./Data/vocab_questions.txt')   # the question vocabulary built by the project
-    ans_vocab = text_helper.VocabDict('./Data/vocab_answers.txt')   # the answer vocabulary built by the project
+    qst_vocab = text_helper.VocabDict('./Data/vocab_questions.txt') # the question vocabulary built by base-vqa project
+    ans_vocab = text_helper.VocabDict('./Data/vocab_answers.txt')   # the question vocabulary built by base-vqa project
     qst = question.lower().split()
     qst2idc = np.array([qst_vocab.word2idx('<pad>')] * 30)
     qst2idc[:len(qst)] = [qst_vocab.word2idx(w) for w in qst]
     qst2idc = qst2idc.reshape(1,30)
 
-    checkpoint = torch.load('./model/model-epoch-30.ckpt')  # the checkpoint file saved by the project
+    checkpoint = torch.load('./model/model-epoch-30.ckpt')          # the checkpoint file saved by base-vqa project
     model = VqaModel(
         embed_size=1024,
         qst_vocab_size=qst_vocab.vocab_size,
@@ -49,7 +49,7 @@ def predict(image_path, question):
     ans = ans_vocab.idx2word(index)
     print(ans)
 
-    
+    # these commends are for show the top five possible answers
     # _, pred = torch.sort(output,1,True)
     # index_arr = pred.cpu().detach().numpy()
     # pos_ans = index_arr[0][0:5]
@@ -73,6 +73,8 @@ class inf():
     def __str__(self):
         return self.phase+' '+self.epoch+' '+self.loss+' '+self.acc_exp1+' '+self.acc_exp2
 
+
+# check_output function is for checking loss and accuarcy
 def check_output():
     inf_list = []
     for i in range(30):
@@ -113,7 +115,7 @@ def check_output():
     plt.show()
 
 if __name__=='__main__':
-    check_output()
-    # predict('./Data/test.jpg','what is in the picture ?')
-    # predict('./Data/test_searched_pic.jpg','what is in the picture ?')
-    # predict('./Data/test_elephant.jpg','what is in the picture ?')
+    predict('./Data/test.jpg','what is in the picture ?')
+    predict('./Data/test_searched_pic.jpg','what is in the picture ?')
+    predict('./Data/test_elephant.jpg','what is in the picture ?')
+    # check_output()
