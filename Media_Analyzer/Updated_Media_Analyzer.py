@@ -64,10 +64,10 @@ def get_keywords_from_param():
 def main():
     start = time.time()
 
-    consumer_key = "ZVKdMXRwNzz5FLR2VoXltA6G3"
-    consumer_secret = "DxfJ5oupjvOewjLoMwlRxhafGTHLPyQ9lhhWGCdgVfyGYAupXd"
-    access_key = "1441095844367720452-04LIPcoXYHhc7iiYVsR9oeDZAos2hQ"
-    access_secret = "I17DHdaUVUgWfY8ebW1Hq9wytftxKyQbFP8XWcRfzR6fR"
+    consumer_key = "******"
+    consumer_secret = "******"
+    access_key = "******"
+    access_secret = "******"
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
