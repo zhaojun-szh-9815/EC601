@@ -93,6 +93,15 @@ The architecture of our code is simple. Firstly, convert the picture and the que
 
 So, as we mentioned before, the answers always are picked in the top 1000 answers, we are not sure why the author of the open-source project planned to implement like this.
 
+<h2>Summary:</h2>
+&ensp;&ensp;We have done part of our job.<br>
+&ensp;&ensp;We implemented a test that matched our Minimum Viable Product, which can input a picture and a question, and output an answer.<br>
+&ensp;&ensp;But we still need to change the model to meet the medical dataset input requirement or change the medical dataset input as the format that the model can recognize.<br>
+&ensp;&ensp;In addition, the normalization of the medical image might be a problem, since the normalization parameter in the open-source project we referred may be only used in "natural scenes".<br>
+&ensp;&ensp;Furthermore, we still have some questions about the open-source project, for example, why the author only implemented an answer field which contains 1000 answers, what is the norm (norm number) used for. We will study more and try to figure it out.<br>
+&ensp;&ensp;And as a product, it also needs a user interface. It will be the last part of our project.<br>
+
 <h2>Future work:</h2>
-&ensp;&ensp;Convert the model to medical input<br>
-&ensp;&ensp;Maybe increase the answer field
+&ensp;&ensp;Focus on converting the model or building medical inputs<br>
+&ensp;&ensp;Maybe increase the answer field<br>
+
