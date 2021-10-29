@@ -28,6 +28,6 @@ jobs:
       - run: pip install tweepy
       - run: pip install google
       - run: pip install google-api-core
-      - run: pip install google-cloud
+      - run: pip install google-cloud-language
       - run: pytest Media_Analyzer/Test_Updated_Media_Analyzer.py
           
