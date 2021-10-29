@@ -1,4 +1,4 @@
-import Updated_Media_Analyzer
+import Updated_Media_Analyzer as MA
 import pytest
 import tweepy
 
@@ -14,18 +14,18 @@ api = tweepy.API(auth)
 def test_get_keyword_input(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _:"Genshin,Boston University")
     keywords_input = input('give me keywords (use comma to split):')
-    get_keywords = Media_Analyse.get_keywords_from_input(keywords_input)
+    get_keywords = MA.get_keywords_from_input(keywords_input)
     assert get_keywords == ['Genshin','Boston University']
 
 def test_get_keyword_param():
-    get_keywords = Media_Analyse.get_keywords_from_param()
+    get_keywords = MA.get_keywords_from_param()
     assert get_keywords == ['Test_Media_Analyse.py']
 
 def test_get_tweets():
     keywords = 'Genshin'
-    get_tweets = Media_Analyse.get_tweets(keywords,api)
+    get_tweets = MA.get_tweets(keywords,api)
     assert get_tweets == None
 
 def test_process_time():
-    time_process = Media_Analyse.main()
+    time_process = MA.main()
     assert time_process <= 0.5
