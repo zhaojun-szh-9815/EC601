@@ -26,5 +26,6 @@ jobs:
           python-version: ${{matrix.python-version}}
       - run: pip install pytest
       - run: pip install tweepy
+      - run: pip install google.cloud
       - run: pytest Media_Analyzer/Test_Updated_Media_Analyzer.py
           
