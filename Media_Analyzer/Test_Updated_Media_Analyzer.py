@@ -10,5 +10,5 @@ def test_get_keyword_input(monkeypatch):
 
 def test_get_keyword_param():
     get_keywords = MA.get_keywords_from_param()
-    assert get_keywords == ['Test_Media_Analyse.py']
+    assert get_keywords == ['Media_Analyzer/Test_Updated_Media_Analyzer.py']
 
