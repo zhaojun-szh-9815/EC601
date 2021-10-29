@@ -26,5 +26,5 @@ jobs:
           python-version: ${{matrix.python-version}}
       - run: pip install pytest
       - run: pip install tweepy
-      - run: pytest EC601/Media_Analyzer/Test_Updated_Media_Analyzer.py
+      - run: pytest Media_Analyzer/Test_Updated_Media_Analyzer.py
           
