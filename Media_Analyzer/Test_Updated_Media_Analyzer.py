@@ -1,4 +1,4 @@
-import Media_Analyse
+import Updated_Media_Analyzer
 import pytest
 import tweepy
 
