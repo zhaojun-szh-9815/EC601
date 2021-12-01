@@ -48,9 +48,13 @@ def main(args):
     train_epoch = args.num_epochs
 
     if(args.load > 0):
-        checkpoint = torch.load('./models/model-epoch-{:02d}.ckpt'.format(args.load))
-        model.load_state_dict(checkpoint['state_dict'])
-        train_epoch -= checkpoint['epoch']
+        try:
+            checkpoint = torch.load('./models/model-epoch-{:02d}.ckpt'.format(args.load))
+            model.load_state_dict(checkpoint['state_dict'])
+            train_epoch -= checkpoint['epoch']
+        except FileNotFoundError:
+            print('did not found model-epoch-{:02d}.ckpt.'.format(args.load))
+            return 0
 
     for epoch in range(train_epoch):
 
